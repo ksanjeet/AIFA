@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="site_title_faq">Association of Indian Families in Aachen - FAQs</title>
+    <!-- Favicon / Site Icon -->
+    <link rel="icon" href="logo.svg" type="image/svg+xml">    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0; /* Light gray track */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4a5568; /* Darker gray thumb */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2d3748; /* Even darker on hover */
+        }
+    </style>
+</head>
+<body id="faq" class="text-gray-800">
+
+    <!-- Header and Navigation -->
+    <header class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center justify-between w-full md:w-auto">
+                <a href="index.html" class="flex items-center space-x-2 rounded-lg p-2 hover:bg-blue-600 transition-colors duration-300">
+                    <!-- AIFA e.V. Logo (SVG) -->
+                    <img src="logo.svg" alt="AIFA e.V. Logo" class="h-12 w-12 mr-2">
+                    <span class="text-3xl font-bold tracking-tight">AIFA e.V.</span>
+                </a>
+                <button id="menu-button" class="md:hidden text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <ul id="nav-menu" class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 mt-4 md:mt-0 w-full md:w-auto text-lg
+                        md:static md:bg-transparent md:h-auto md:overflow-y-visible md:p-0
+                        absolute top-full left-0 bg-indigo-800 w-full max-h-[calc(100vh-64px)] overflow-y-auto py-2">
+                <li><a href="index.html" class="block py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300" data-translate="nav_home">Home</a></li>
+                <li><a href="about.html" class="block py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300" data-translate="nav_about">About Us</a></li>
+                <li><a href="events.html" class="block py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300" data-translate="nav_events">Events</a></li>
+                <li><a href="event_registration.html" class="block py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300" data-translate="nav_event_registration">Event Registration</a></li>
+                <li><a href="membership.html" class="block py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300" data-translate="nav_membership">Membership</a></li>
+                <li><a href="faq.html" class="block py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300" data-translate="nav_faq">FAQs</a></li>
+                <li><a href="contact.html" class="block py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300" data-translate="nav_contact">Contact</a></li>
+            </ul>
+            <!-- Language Selector -->
+            <div class="ml-0 md:ml-8 mt-4 md:mt-0">
+                <select id="language-selector" class="bg-blue-600 text-white py-2 px-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    <option value="en" data-translate="lang_en">English</option>
+                    <option value="de" data-translate="lang_de">Deutsch</option>
+                    <option value="hi" data-translate="lang_hi">हिन्दी</option>
+                    <option value="mr" data-translate="lang_mr">मराठी</option>
+                    <option value="te" data-translate="lang_te">తెలుగు</option>
+                    <option value="ta" data-translate="தமிழ்" selected>தமிழ்</option>
+                    <option value="bn" data-translate="lang_bn">বাংলা</option>
+                    <option value="pa" data-translate="lang_pa">ਪੰਜਾਬੀ</option>
+                    <option value="kn" data-translate="lang_kn">ಕನ್ನಡ</option>
+                    <option value="ml" data-translate="lang_ml">മലയാളം</option>
+                    <option value="or" data-translate="lang_or">ଓଡ଼ିଆ</option>
+                    <option value="gu" data-translate="lang_gu">ગુજરાતી</option>
+                    <option value="sa" data-translate="lang_sa">संस्कृतम्</option>
+                    <option value="mai" data-translate="lang_mai">मैथिली</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- FAQ Section -->
+        <section id="faq-section" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 max-w-5xl">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-12 relative" data-translate="faq_portal_title">
+                    Information Portal: FAQs for Indian Families in Germany
+                    <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-blue-500 rounded-full"></span>
+                </h2>
+
+                <!-- Search Bar -->
+                <div class="mb-12">
+                    <input type="text" id="faq-search-input" placeholder="Search FAQs by keyword..." class="w-full p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg" data-translate="faq_search_placeholder">
+                </div>
+
+                <div id="faq-categories-container" class="space-y-10">
+
+                    <!-- Category: AIFA e.V. -->
+                    <div class="faq-category" data-category="aifa">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-400 pb-2" data-translate="faq_cat_aifa_title">AIFA e.V.</h3>
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_q1">
+                                        What is the Association of Indian Families in Aachen (AIFA e.V.)?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_a1">
+                                        AIFA e.V. is a non-profit organization dedicated to fostering a strong community among Indian families living in Aachen, Germany. We organize cultural events, social gatherings, and provide a platform for networking and support.
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_q2">
+                                        How can I become a member?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_a2">
+                                        Membership details and application forms will be available soon on our website. Please check back or contact us through the contact form for more information.
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_q3">
+                                        Are events open to non-members?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_a3">
+                                        Many of our events are open to everyone, including non-members, to promote cultural exchange and community building. Some exclusive events may require membership. Details will be specified for each event.
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_q4">
+                                        How can I volunteer or contribute?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_a4">
+                                        We welcome volunteers! If you're interested in contributing your time or skills, please reach out to us via the contact form, and we'll get in touch with opportunities.
+                                    </p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: First Entry into Germany -->
+                    <div class="faq-category" data-category="first_entry">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-400 pb-2" data-translate="faq_cat_first_entry_title">First Entry into Germany</h3>
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_first_entry_q1">
+                                        What should I do after receiving a job offer in Germany?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_first_entry_a1">
+                                        After receiving a job offer, you should immediately start the visa application process. Gather all required documents, including your employment contract, academic certificates, and proof of funds. It's advisable to check the specific requirements of the German embassy or consulate in your country.
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_first_entry_q2">
+                                        What is the process for family reunification visa?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_first_entry_a2">
+                                        The family reunification visa allows your spouse and minor children to join you in Germany. Key requirements often include proof of sufficient living space, financial means, and basic German language skills for your spouse. The application is typically filed at the German embassy in your home country.
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_first_entry_q3">
+                                        How much gold/jewelry can I bring to Germany?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_first_entry_a3">
+                                        When moving to Germany, personal belongings, including jewelry, are generally exempt from customs duties if they are part of your household effects and have been used by you for at least six months. However, for high-value items, it's advisable to carry proof of ownership and value (e.g., purchase receipts, appraisal certificates) to avoid issues with customs. Always declare items above a certain value as per customs regulations.
+                                    </p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: First Arrival in Aachen -->
+                    <div class="faq-category" data-category="first_arrival_aachen">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-400 pb-2" data-translate="faq_cat_first_arrival_aachen_title">First Arrival in Aachen</h3>
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_first_arrival_aachen_q1">
+                                        What are the best ways to reach Aachen from the airport?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_first_arrival_aachen_a1">
+                                        Aachen is well-connected. From Düsseldorf Airport (DUS) or Cologne Bonn Airport (CGN), you can take a train directly to Aachen Hauptbahnhof (main station). From Maastricht Aachen Airport (MST), buses are available. Taxis and ride-sharing services are also options but are generally more expensive.
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_first_arrival_aachen_q2">
+                                        Where can I find temporary housing in Aachen?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_first_arrival_aachen_a2">
+                                        For temporary housing, consider serviced apartments, Airbnb, or short-term rentals. Websites like Booking.com, Airbnb, and local classifieds (e.g., WG-Gesucht.de for shared flats, though less common for families) can be helpful. Some hotels also offer extended stay options.
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_first_arrival_aachen_q3">
+                                        What is 'Anmeldung' and how do I do it?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_first_arrival_aachen_a3">
+                                        'Anmeldung' is the mandatory registration of your residential address with the local authorities (Bürgeramt/Einwohnermeldeamt) within two weeks of moving into your permanent residence. You'll need your passport, visa, and a landlord confirmation (Wohnungsgeberbestätigung). It's crucial for getting a tax ID, opening a bank account, and other administrative tasks. Book an appointment online in advance.
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_first_arrival_aachen_q4">
+                                        How do I open a bank account in Germany?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_first_arrival_aachen_a4">
+                                        You can open a bank account with traditional banks (e.g., Sparkasse, Deutsche Bank) or online banks (e.g., N26, Comdirect). For traditional banks, you'll typically need your passport, visa/residence permit, and proof of address (Anmeldung certificate). Online banks often offer a simpler digital process.
+                                    </p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Children -->
+                    <div class="faq-category" data-category="children">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-400 pb-2" data-translate="faq_cat_children_title">Children</h3>
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_children_q1">
+                                        How do I find a Kita (kindergarten) or school for my children in Aachen?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_children_a1">
+                                        For Kita, you typically register through the city's online portal (Kita-Navigator Aachen) or directly with individual Kitas. For schools, contact the Schulamt (School Office) of Aachen or individual schools. Early registration for Kitas is highly recommended due to high demand.
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_children_q2">
+                                        Are there any hobby classes or sports clubs for children in Aachen?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_children_a2">
+                                        Yes, Aachen offers a wide range of hobby classes and sports clubs for children. You can find information through the city's official website, local community centers (Familienzentren), sports federations (Stadtsportbund Aachen), or by inquiring directly at schools and Kitas. Options include football, swimming, music, art, and dance.
+                                    </p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Language Learning -->
+                    <div class="faq-category" data-category="language_learning">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-400 pb-2" data-translate="faq_cat_language_learning_title">Language Learning</h3>
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_language_q1">
+                                        Which language schools are available in Aachen?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_language_a1">
+                                        Aachen has several language schools including Volkshochschule (VHS) Aachen, Goethe-Institut (though not directly in Aachen, close by), and private language schools like Sprachenakademie Aachen. They offer various levels and course formats.
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_language_q2">
+                                        What is an 'Integration Course' and how can I join?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_language_a2">
+                                        An Integration Course (Integrationskurs) is a German language and orientation course for new immigrants, partially funded by the government. It covers up to B1 German language level and includes a module on German culture, history, and legal system. You can apply through the Bundesamt für Migration und Flüchtlinge (BAMF) or directly with authorized language schools.
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_language_q3">
+                                        How can I learn German while working full-time?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_language_a3">
+                                        Many language schools offer evening or weekend courses specifically designed for working professionals. Online platforms (e.g., Duolingo, Babbel, Deutsche Welle), language exchange partners, and practicing with German colleagues or friends can also be very effective. Some employers also offer in-house language training.
+                                    </p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Residence Permit -->
+                    <div class="faq-category" data-category="residence_permit">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-400 pb-2" data-translate="faq_cat_residence_permit_title">Residence Permit</h3>
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_residence_q1">
+                                        Why is the residence permit important as an identity and visa document?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_residence_a1">
+                                        Your residence permit (Aufenthaltstitel) is your official proof of legal residency in Germany. It serves as your primary identification document within Germany and dictates your rights (e.g., work, study). It also acts as your visa for re-entry into Germany and other Schengen countries.
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_residence_q2">
+                                        How do I apply for a residence permit for the first time and extend it?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_residence_a2">
+                                        The initial application is usually done at the Ausländerbehörde (Foreigners' Office) in Aachen after you complete your Anmeldung. You'll need your passport, visa, employment contract, proof of health insurance, and other documents. For extensions, apply well before your current permit expires, providing updated documents. Appointments are usually mandatory.
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_residence_q3">
+                                        How do I apply for a 'Settlement Permit' (Permanent Residence)?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_residence_a3">
+                                        A Settlement Permit (Niederlassungserlaubnis) grants you permanent residency. Eligibility typically requires 5 years of legal residency (shorter for Blue Card holders), sufficient German language skills (B1), secure livelihood, adequate living space, and contributions to the pension scheme. Apply at the Ausländerbehörde.
+                                    </p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: House Hunting -->
+                    <div class="faq-category" data-category="house_hunting">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-400 pb-2" data-translate="faq_cat_house_hunting_title">House Hunting</h3>
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_house_hunting_q1">
+                                        How do I find a long-term apartment in Aachen?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_house_hunting_a1">
+                                        Popular platforms for apartment hunting include ImmobilienScout24, Immowelt, and eBay Kleinanzeigen. Networking and local real estate agents (Makler) can also be helpful. Be prepared for high demand and competition, especially for family-friendly apartments.
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_house_hunting_q2">
+                                        What should I know about rental contracts (Vertrag) and termination (Kündigung)?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_house_hunting_a2">
+                                        German rental contracts (Mietvertrag) are comprehensive. Pay attention to clauses regarding rent increases, renovation duties, and notice periods for termination (usually 3 months for tenants). Always read the contract carefully and clarify any doubts. Seek advice from a Mieterverein (tenants' association) if needed.
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-transform duration-200" data-translate="faq_house_hunting_q3">
+                                        What is involved in purchasing a property (Notar, Bauamt, Finanzamt)?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_house_hunting_a3">
+                                        Property purchase in Germany involves a Notar (public notary) who drafts and certifies the purchase agreement. The Bauamt (Building Authority) handles building permits and regulations. The Finanzamt (Tax Office) is involved for property transfer tax (Grunderwerbsteuer). Legal and financial advice is highly recommended due to the complexity.
+                                    </p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Social Circle -->
+                    <div class="faq-category" data-category="social_circle">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-400 pb-2" data-translate="faq_cat_social_circle_title">Social Circle</h3>
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_social_circle_q1">
+                                        How can I build a social circle and meet other Indians in Aachen?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_social_circle_a1">
+                                        Joining AIFA e.V. events is a great start! Also, explore local Indian community groups on social media (Facebook, WhatsApp), attend cultural festivals, and participate in university or company international groups. Language exchange meetups are also good for meeting diverse people.
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_social_circle_q2">
+                                        Are there any Indian associations (Verein) or cultural groups in Aachen?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_social_circle_a2">
+                                        Yes, apart from AIFA e.V., there might be other smaller Indian cultural groups or student associations (especially around RWTH Aachen University). Searching online for "Indischer Verein Aachen" or checking notice boards at Indian grocery stores can provide leads.
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_social_circle_q3">
+                                        How can I pursue hobbies and sports in Aachen?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_social_circle_a3">
+                                        Aachen has numerous sports clubs (Sportvereine) for various activities like football, tennis, swimming, and hiking. The Hochschulsport (university sports) offers many courses for students and staff. For hobbies, check local community centers (Volkshochschule), private clubs, or online platforms like Meetup.com for interest-based groups.
+                                    </p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Citizenship -->
+                    <div class="faq-category" data-category="citizenship">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-400 pb-2" data-translate="faq_cat_citizenship_title">Citizenship</h3>
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_citizenship_q1">
+                                        What is the process to acquire German Citizenship?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_citizenship_a1">
+                                        The standard process for naturalization (Einbürgerung) requires 8 years of legal residency (shorter in some cases, e.g., 7 years with integration course, 6 years for spouses of German citizens), sufficient German language skills (B1/B2), passing a naturalization test, and generally renouncing your previous citizenship (India does not allow dual citizenship for adults).
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl shadow-md p-6 faq-item">
+                                <details class="group">
+                                    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200" data-translate="faq_citizenship_q2">
+                                        What is the process for surrendering Indian passport and getting an OCI card?
+                                        <span class="transform group-open:rotate-180 transition-transform duration-200">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <p class="mt-4 text-gray-700 leading-relaxed" data-translate="faq_citizenship_a2">
+                                        Upon acquiring German citizenship, you must surrender your Indian passport to the Indian Embassy/Consulate. You will then receive a "Surrender Certificate." Subsequently, you can apply for an Overseas Citizen of India (OCI) card, which grants lifelong visa-free travel to India and other benefits. The application process is online via the Indian government portal.
+                                    </p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg" data-translate="footer_copyright">&copy; 2025 Association of Indian Families in Aachen. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="data_protection_policy.html" class="text-gray-400 hover:text-white transition-colors duration-200" data-translate="footer_data_protection_policy">Data Protection Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200" data-translate="footer_terms">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDKs (required for script.js and potentially faq_search.js) -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        const firebaseConfig = typeof __firebase_config !== 'undefined' && __firebase_config ? JSON.parse(__firebase_config) : {};
+        if (Object.keys(firebaseConfig).length === 0) {
+            console.warn("Firebase config is empty or not provided by Canvas. If deploying outside Canvas, ensure firebaseConfig is set manually.");
+        }
+
+        window.firebaseApp = initializeApp(firebaseConfig);
+        window.db = getFirestore(window.firebaseApp);
+        window.collection = collection;
+        window.addDoc = addDoc;
+
+        console.log("Firebase initialized in HTML. window.db:", window.db);
+    </script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="faq_search.js"></script> <!-- NEW SCRIPT FOR FAQ SEARCH -->
+</body>
+</html>

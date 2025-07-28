@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="site_title_home">Association of Indian Families in Aachen - Home</title>
+    <!-- Favicon / Site Icon -->
+    <link rel="icon" href="logo.svg" type="image/svg+xml">    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Firebase SDKs -->
+    <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+    // Import the functions you need from the SDKs you need
+    // import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+    // import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyBL4Ioj1cyY8pxMj54pVpD6K610rDTy9sM",
+        authDomain: "aifa-membership-db.firebaseapp.com",
+        projectId: "aifa-membership-db",
+        storageBucket: "aifa-membership-db.firebasestorage.app",
+        messagingSenderId: "181126818717",
+        appId: "1:181126818717:web:17f67e78f06bc93e409d74",
+        measurementId: "G-WXKKW8F11B"
+    };
+    // If you plan to add authentication later, you'd also import:
+    // import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+
+    // Make Firebase app and db instances globally accessible if needed across scripts
+    // window.firebaseApp = initializeApp(JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}'));
+    window.firebaseApp = initializeApp(firebaseConfig);    
+    window.db = getFirestore(window.firebaseApp);
+    
+    // --- NEW LINES TO ADD ---
+    window.collection = collection; // Make collection function globally available
+    window.addDoc = addDoc;       // Make addDoc function globally available
+    // --- END NEW LINES ---    
+    
+    // This console log will help debug if window.db is successfully assigned
+    console.log("Firebase initialized in HTML. window.db:", window.db);    
+
+    // Optional: Auto-authenticate if __initial_auth_token is provided by Canvas
+    // window.auth = getAuth(window.firebaseApp);
+    // if (typeof __initial_auth_token !== 'undefined') {
+    //     signInWithCustomToken(window.auth, __initial_auth_token).catch(e => console.error("Firebase custom token sign-in failed:", e));
+    // } else {
+    //     signInAnonymously(window.auth).catch(e => console.error("Firebase anonymous sign-in failed:", e));
+    // }
+    
+    
+    // Initialize Firebase
+    // const app = initializeApp(firebaseConfig);
+    // const analytics = getAnalytics(app);
+    </script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0; /* Light gray track */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4a5568; /* Darker gray thumb */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2d3748; /* Even darker on hover */
+        }
+    </style>
+</head>
+<body id="home" class="text-gray-800">
+
+    <!-- Header and Navigation -->
+    <header class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center justify-between w-full md:w-auto">
+                <a href="index.html" class="flex items-center space-x-2 rounded-lg p-2 hover:bg-blue-600 transition-colors duration-300">
+                    <!-- AIFA e.V. Logo (SVG) -->
+                    <img src="logo.svg" alt="AIFA e.V. Logo" class="h-12 w-12 mr-2">
+                    <span class="text-3xl font-bold tracking-tight">AIFA e.V.</span>
+                </a>
+                <button id="menu-button" class="md:hidden text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <ul id="nav-menu" class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 mt-4 md:mt-0 w-full md:w-auto text-lg
+                        md:static md:bg-transparent md:h-auto md:overflow-y-visible md:p-0
+                        absolute top-full left-0 bg-indigo-800 w-full max-h-[calc(100vh-64px)] overflow-y-auto py-2">
+                <li><a href="index.html" class="block py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300" data-translate="nav_home">Home</a></li>
+                <li><a href="about.html" class="block py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300" data-translate="nav_about">About Us</a></li>
+                <li><a href="events.html" class="block py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300" data-translate="nav_events">Events</a></li>
+                <li><a href="membership.html" class="block py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300" data-translate="nav_membership">Membership</a></li>
+                <li><a href="faq.html" class="block py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300" data-translate="nav_faq">FAQs</a></li>
+                <li><a href="contact.html" class="block py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300" data-translate="nav_contact">Contact</a></li>
+            </ul>
+            <!-- Language Selector -->
+            <div class="ml-0 md:ml-8 mt-4 md:mt-0">
+                <select id="language-selector" class="bg-blue-600 text-white py-2 px-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    <option value="en" data-translate="lang_en">English</option>
+                    <option value="de" data-translate="lang_de">Deutsch</option>
+                    <option value="hi" data-translate="lang_hi">हिन्दी</option>
+                    <option value="mr" data-translate="lang_mr">मराठी</option>
+                    <option value="te" data-translate="lang_te">తెలుగు</option>
+                    <option value="ta" data-translate="lang_ta">தமிழ்</option>
+                    <option value="bn" data-translate="lang_bn">বাংলা</option>
+                    <option value="pa" data-translate="lang_pa">ਪੰਜਾਬੀ</option>
+                    <option value="kn" data-translate="lang_kn">ಕನ್ನಡ</option>
+                    <option value="ml" data-translate="lang_ml">മലയാളം</option>
+                    <option value="or" data-translate="lang_or">ଓଡ଼ିଆ</option>
+                    <option value="gu" data-translate="lang_gu">ગુજરાતી</option>
+                    <option value="sa" data-translate="lang_sa">संस्कृतम्</option>
+                    <option value="mai" data-translate="lang_mai">मैथिली</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="relative bg-cover bg-center h-screen flex items-center justify-center text-white" style="background-image: url('Aachen_Hauptbahnhof_10-2017.jpg');">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="relative z-10 text-center p-6 bg-gray-900 bg-opacity-70 rounded-xl shadow-2xl max-w-3xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4 animate-fade-in-down" data-translate="home_main_title">Association of Indian Families in Aachen</h1>
+                <p class="text-xl md:text-2xl mb-8 leading-relaxed animate-fade-in-up" data-translate="home_tagline">
+                    Connecting Indian families in Aachen, fostering community, and celebrating our rich culture.
+                </p>
+                <a href="events.html" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105 animate-bounce-in" data-translate="home_explore_events">
+                    Explore Events
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg" data-translate="footer_copyright">&copy; 2025 Association of Indian Families in Aachen. All rights reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Image: "Aachen Hauptbahnhof 10-2017.jpg" by A.Savin, Free Art License, via Wikimedia Commons.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="data_protection_policy.html" class="text-gray-400 hover:text-white transition-colors duration-200" data-translate="footer_data_protection_policy">Data Protection Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200" data-translate="footer_terms">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
